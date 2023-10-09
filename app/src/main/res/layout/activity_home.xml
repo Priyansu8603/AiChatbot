@@ -6,4 +6,60 @@
     android:layout_height="match_parent"
     tools:context=".homeActivity">
 
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/slideViewPager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/previousBtn"
+        android:layout_width="130dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins"
+        android:padding="15dp"
+        android:text="Previous"
+        android:background="@drawable/btn_background"
+        android:textStyle="bold"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/nextBtn"
+        android:layout_width="130dp"
+        android:layout_height="wrap_content"
+        android:text="Next"
+        android:textStyle="bold"
+        android:padding="15sp"
+        android:textColor="@color/white"
+        android:background="@drawable/btn_background1"
+        android:fontFamily="@font/poppins"
+        android:textAllCaps="false"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/skipBtn"
+        android:layout_width="130dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/btn_background2"
+        android:text="Skip"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:padding="15sp"
+        android:fontFamily="@font/poppins"
+        android:textAllCaps="false"
+        android:textSize="18sp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintRight_toRightOf= "parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
