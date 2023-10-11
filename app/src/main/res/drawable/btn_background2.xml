@@ -7,6 +7,8 @@
                 android:centerColor="#C608D8"
                 android:endColor="#8330ED"/>
             <corners android:bottomLeftRadius="25sp"/>
+            <stroke android:width="2dp" android:color="@color/white"/>
+
         </shape>
 
     </item>
