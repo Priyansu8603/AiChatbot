@@ -4,38 +4,37 @@ import android.content.Intent
 import android.os.AsyncTask
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
+import com.example.aichatbot.databinding.ActivityMainBinding
 import java.lang.Exception
 
 class MainActivity : AppCompatActivity() {
+    private lateinit var binding: ActivityMainBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
-
-        startHeavyTask()
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
     }
 
-    private fun startHeavyTask() {
-        LongOperation().execute()
+    override fun onStart() {
+        super.onStart()
+        isFirstTime()
     }
-    private open inner class LongOperation : AsyncTask<String?, Void, String?>(){
-        override fun doInBackground(vararg p0: String?): String? {
-            for(i in 0..6){
-                try {
-                    Thread.sleep(1000)
-                }
-                catch (e: Exception){
-                    Thread.interrupted()
-                }
+
+    private fun isFirstTime() {
+        Handler(Looper.getMainLooper()).postDelayed({
+            val sharedPreferenceManager = SharedPreferenceManager(this)
+            if(sharedPreferenceManager.isFirstTime){
+                startActivity(Intent(this,walkingThroughOnBoarding::class.java))
+                finish()
             }
-            return "result"
-        }
-
-        override fun onPostExecute(result: String?) {
-            super.onPostExecute(result)
-            val intent = Intent(this@MainActivity,homeActivity::class.java)
-            startActivity(intent)
-            finish()
-        }
-
+            else{
+                startActivity(Intent(this,HomeScreen::class.java))
+                finish()
+            }
+        },7000)
     }
+
 }
+

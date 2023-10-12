@@ -7,45 +7,44 @@
     android:layout_height="match_parent"
     tools:context=".onBoardingfragment">
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="150dp"
-        android:src="@tools:sample/avatars"
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/onBoardingAnim"
+        android:layout_width="400dp"
+        android:layout_height="400dp"
+        android:layout_marginTop="80dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true" />
 
     <TextView
         android:id="@+id/titleTxt"
         android:layout_width="match_parent"
-        android:gravity="center"
-        android:textSize="35sp"
+        android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
+        android:layout_marginTop="50dp"
         android:layout_marginEnd="16dp"
         android:fontFamily="@font/poppins"
+        android:gravity="center"
+        android:textSize="35sp"
         android:textStyle="bold"
-        android:layout_marginTop="80dp"
-        android:layout_height="wrap_content"
-        android:text="Title"
-        app:layout_constraintEnd_toEndOf="@+id/imageView"
-        app:layout_constraintStart_toStartOf="@+id/imageView"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+        app:layout_constraintEnd_toEndOf="@+id/onBoardingAnim"
+        app:layout_constraintStart_toStartOf="@+id/onBoardingAnim"
+        app:layout_constraintTop_toBottomOf="@+id/onBoardingAnim" />
 
     <TextView
 
         android:id="@+id/DesTxt"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="This is a description box"
-        android:layout_marginTop="50dp"
-        android:gravity="center"
-        android:fontFamily="@font/poppins"
-        android:textAlignment="center"
         android:layout_marginStart="16dp"
+        android:layout_marginTop="20dp"
         android:layout_marginEnd="16dp"
-        android:textSize="25sp"
+        android:fontFamily="@font/poppins"
+        android:gravity="center"
+        android:textAlignment="center"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="@+id/titleTxt"
         app:layout_constraintStart_toStartOf="@+id/titleTxt"
         app:layout_constraintTop_toBottomOf="@+id/titleTxt" />
